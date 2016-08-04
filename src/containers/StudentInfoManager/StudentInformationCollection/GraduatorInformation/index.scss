@@ -1,0 +1,14 @@
+.information-container {
+    width: 100%;
+    padding-left: 60px;
+}
+.information-container-item {
+    display: inline-block;
+    width: 30%;
+    list-style-type: disc;
+}
+.information-container-item i {
+    font-style: normal;
+    padding-left: 1px;
+    font-size: 12px;
+}

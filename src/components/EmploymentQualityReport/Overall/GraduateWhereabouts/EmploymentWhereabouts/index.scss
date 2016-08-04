@@ -1,0 +1,23 @@
+.employment-whereabouts-container {
+  .employment-region-whereabouts-pie-chart {
+    width: 100%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .employment-category-bar-chart {
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .employment-company-scale-pie-chart,
+  .employment-company-type-pie-chart {
+    //display: inline-block;
+    width: 100%;
+    height: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

@@ -1,0 +1,80 @@
+@import "../../style/global.scss";
+@import "../../style/colors.scss";
+
+$navigation-height: 100px;
+$navigation-width: $content-max-width;
+$school-logo-height: 70px;
+$platform-logo-height: 40px;
+
+.navigation-container {
+  position: relative;
+  background-color: $main-background-color;
+  height: $navigation-height;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.navigation-container .navigation-bar {
+  position: relative;
+  width: $navigation-width;
+  margin-left: auto;
+  margin-right: auto;
+
+  .school-logo {
+    height: $school-logo-height;
+    margin-top: ($navigation-height - $school-logo-height) / 2;
+    margin-bottom: ($navigation-height - $school-logo-height) / 2;
+  }
+
+  .platform-logo {
+    height: $platform-logo-height;
+    margin-left: 80px;
+    margin-top: ($navigation-height - $platform-logo-height) / 2;
+    margin-bottom: ($navigation-height - $platform-logo-height) / 2;
+  }
+
+}
+
+.navigation-bar .user-info-container {
+  float: right;
+  display: inline-block;
+
+  margin-left: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+
+  font-size: 14px;
+}
+
+.user-info-container .user-info {
+  display: inline-block;
+  .username {
+    display: inline-block;
+  }
+}
+
+.user-info-container .user-actions {
+  display: inline-block;
+  height: 100%;
+
+  .user-action-item,
+  .user-action-divider {
+    display: inline-block;
+  }
+
+  .user-action-item {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .user-action-divider {
+    position: absolute;
+    top: 3px;
+    bottom: 3px;
+
+    width: 1px;
+    background-color: dimgray;
+  }
+}
+

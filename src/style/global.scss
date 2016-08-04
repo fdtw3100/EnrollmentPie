@@ -1,0 +1,6 @@
+$content-max-width: 1000px;
+$side-menu-width: 190px;
+
+$main-content-padding: 30px;
+$main-content-padding-right: $main-content-padding;
+$main-content-padding-left: $side-menu-width + $main-content-padding-right;

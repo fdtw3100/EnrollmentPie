@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>职云-高校精准就业服务商</title>
+    <script type="text/javascript" src="https://o9mmm1azn.qnssl.com/shim.js"></script>
+    <!--Support IE8-->
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <link rel="stylesheet" type="text/css"
+          href="https://o9mmm1azn.qnssl.com/jquery.fullPage.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://o9mmm1azn.qnssl.com/animate.min.css">
+    <script src="https://o9mmm1azn.qnssl.com/jquery.slimscroll.min.js"></script>
+    <script src="https://o9mmm1azn.qnssl.com/jquery.fullPage.min.js"></script>
+
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#fullpage').fullpage({
+                anchors: ['home', 'product', 'ecosystem', 'features', 'functions', 'team', 'partners', 'contact-us'],
+                sectionsColor: ['white'],
+                navigation: true,
+                navigationPosition: 'right',
+                navigationTooltips: ['职云', '产品体系', '就业生态', "产品特色", "功能模块", "领军团队", '入驻企业', "联系我们"],
+                afterLoad: function (anchorLink, index) {
+//                    console.log("afterLoad: %o", arguments);
+                    switch (index) {
+                        case 2:
+                            $('.product-architecture-item').removeClass('fadeOut').each(function (index, element) {
+                                $(this).css('animation-delay', index * 200 + 'ms').addClass('lightSpeedIn').css('visibility', 'visible');
+                            });
+                            break;
+                        case 3: //就业生态
+                            $('.ecosystem-item').removeClass('fadeOut').addClass("bounceIn").css('visibility', 'visible');
+                            $('.ecosystem-title').addClass('flipInX').css('animation-delay', '400ms').removeClass('fadeOut').css('visibility', 'visible');
+                            $('.ecosystem-description').addClass('fadeInRight').css('animation-duration', '1.5s').removeClass('fadeOut').css('visibility', 'visible').each(function (index) {
+                                $(this).css('animation-delay', index * 50 + 'ms');
+                            });
+                            break;
+                        case 4: //产品特色
+                            $('#features-web').removeClass('fadeOut').addClass("fadeInDown").css('visibility', 'visible');
+                            $('#features-app').removeClass('fadeOut').addClass("fadeInUp").css('visibility', 'visible');
+
+                            $('.feature .description').removeClass('fadeOut').css('visibility', 'visible').each(function (index, element) {
+                                if (index == 0) {
+                                    $(this).addClass('fadeInLeft');
+                                } else {
+                                    $(this).addClass('fadeInRight');
+                                }
+                            });
+                            break;
+                        case 5: //功能模块
+                            $('.function-item').css('visibility', 'visible').each(function (index, element) {
+                                $(this).css('animation-delay', index * 25 + 'ms').addClass('fadeInUp').removeClass('fadeOut');
+                            });
+                            break;
+                        case 6: //领军团队
+                            $('.profile-left-align').removeClass('fadeOut').addClass("fadeInLeft").css('visibility', 'visible').each(function (index) {
+                                $(this).css('animation-delay', index * 10 + 'ms');
+                            });
+                            $('.profile-right-align').removeClass('fadeOut').addClass("fadeInRight").css('visibility', 'visible').each(function (index) {
+                                $(this).css('animation-delay', index * 200 + 'ms');
+                            });
+                            break;
+                        case 7:
+                        case 8 : //入驻企业
+                            $('.partner-gallery').removeClass('fadeOut').addClass("fadeIn").css('visibility', 'visible');
+                            break;
+                        default:
+                            break;
+                    }
+                },
+                onLeave: function (index, nextIndex, direction) {
+//                    console.log("on leave: %O", arguments);
+                    switch (index) {
+                        case 2:
+                            $('.product-architecture-item').removeClass('lightSpeedIn').addClass('fadeOut');
+                            break;
+                        case 3: //就业生态
+                            $('.ecosystem-item').removeClass("bounceIn").addClass('fadeOut');
+                            $('.ecosystem-title').removeClass('flipInX').addClass('fadeOut');
+                            $('.ecosystem-description').removeClass('flipInX').addClass('fadeOut');
+                            break;
+                        case 4:
+                            $('#features-web').removeClass("fadeInDown").addClass('fadeOut');
+                            $('#features-app').removeClass("fadeInUp").addClass('fadeOut');
+                            $('.feature .description').removeClass('fadeInLeft').removeClass('fadeInRight').addClass('fadeOut');
+                            break;
+                        case 5:
+                            $('.function-item').removeClass('fadeInUp').addClass('fadeOut');
+                            break;
+                        case 6:
+                            $('.profile-left-align').addClass('fadeOut').removeClass("fadeInLeft");
+                            $('.profile-right-align').addClass('fadeOut').removeClass("fadeInRight");
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            });
+
+            $('.fp-tooltip').css('color', '#333');
+
+            var modal = $('#contact-us-modal');
+            $("#show-contact-us-modal-button").click(function () {
+                modal.show();
+            });
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function (event) {
+                if (event.target.id == "contact-us-modal") {
+                    modal.hide();
+                }
+            }
+        });
+    </script>
+
+    <style>
+
+        .animated {
+            visibility: hidden;
+        }
+
+        html, body {
+            font-size: 16px;
+            font-weight: 300;
+            font-family: 'PingFang SC', 'Helvetica', 'STHeitiSC-Light', 'Microsoft Yahei', "微软雅黑", 'Arial', sans-serif;
+        }
+
+        h1, h3 {
+            font-weight: 300;
+        }
+
+        h2 {
+            font-weight: 400;
+        }
+
+        a {
+            color: rgb(83, 151, 216);
+        }
+
+        b {
+            color: #333
+        }
+
+        p {
+            line-height: 18px;
+            font-size: 14px;
+            color: #A1A1A1;
+        }
+
+        p img {
+            height: 14px;
+            position: relative;
+            top: 2px;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        /* Centered texts in each section
+        * --------------------------------------- */
+        .section {
+            text-align: center;
+        }
+
+        .section-background {
+            background-color: rgb(223, 235, 240);
+        }
+
+        .section-header {
+            font-size: 2rem;
+            letter-spacing: 2px;
+            color: #666;
+        }
+
+        .section-header::after {
+            content: ' ';
+            display: block;
+            width: 50px;
+            height: 2px;
+            margin: 4px auto;
+            background-color: rgb(80, 150, 219);
+        }
+
+        .product-architecture-container {
+            display: inline-block;
+            text-align: left;
+            margin-left: 60px;
+        }
+
+        .product-architecture-item {
+            margin: 20px;
+        }
+
+        .product-architecture-item p {
+            font-size: 1rem;
+            display: inline-block;
+            color: #666;
+        }
+
+        .product-architecture-item p img {
+            height: 1rem;
+            padding-right: 15px;
+        }
+
+        .ecosystem-item {
+            padding: 20px;
+            display: inline-block;
+        }
+
+        .ecosystem-item img {
+            width: 85px;
+        }
+
+        .ecosystem-item span {
+            display: block;
+            padding: 5px;
+            font-size: 1.2rem;
+        }
+
+        .ecosystem-title {
+            color: rgb(80, 150, 219);
+            font-size: 1.5rem;
+        }
+
+        .ecosystem-description {
+
+        }
+
+        .feature {
+
+        }
+
+        .feature .description {
+            vertical-align: top;
+            display: inline-block;
+        }
+
+        .feature img {
+            position: relative;
+            display: inline-block;
+        }
+
+        #features-app {
+            position: absolute;
+            bottom: 0;
+            max-width: 300px;
+            max-height: 350px;
+        }
+
+        #features-web {
+            width: 300px;
+            margin-left: 80px;
+        }
+
+        .functions {
+            margin-top: 50px;
+        }
+
+        .function-item {
+            position: relative;
+            display: inline-table; /*TODO: 不明*/
+            width: 200px;
+            height: 110px;
+            margin: 10px;
+            padding: 55px 20px 20px;
+            background: rgb(244, 244, 244);
+            box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.117647) 0px 1px 4px;
+            border-radius: 2px;
+        }
+
+        @media (min-height: 728px) {
+            .function-item {
+                margin: 20px;
+                height: 150px;
+                padding-top: 50px;
+            }
+
+            .function-item img {
+                height: 90px;
+            }
+        }
+
+        .function-item img {
+            display: inline-block;
+            margin-left: auto;
+            margin-right: auto;
+            height: 70px;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .function-item .title {
+            font-size: 1.2rem;
+        }
+
+        .function-item p {
+            text-align: left;
+        }
+
+        .function-item .title::after {
+            content: ' ';
+            display: block;
+            width: 150px;
+            height: 1px;
+            margin: 4px auto;
+            background-color: rgb(188, 188, 188);
+        }
+
+        .profile {
+            margin: 20px;
+            vertical-align: top;
+        }
+
+        .profile .avatar {
+            width: 80px;
+            padding: 5px;
+            background: rgba(0, 0, 0, 0.25);
+            border-radius: 45px;
+        }
+
+        .profile .info {
+            width: 500px;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .profile-left-align .info {
+            padding-left: 20px;
+            text-align: left;
+        }
+
+        .profile-right-align .info {
+            padding-right: 20px;
+            text-align: right;
+        }
+
+        .profile-right-align .info p {
+            text-align: left;
+        }
+
+        .profile .name {
+            display: inline-block;
+            font-size: 1.2rem;
+        }
+
+        .profile .description {
+
+        }
+
+        .partner-gallery {
+            text-align: left;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .partner-gallery .partner {
+            width: 15%;
+            padding: 50px 10px 10px;
+            box-sizing: border-box;
+        }
+
+        @media (min-width: 1366px) {
+            .partner-gallery {
+                width: 80%;
+            }
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            background: rgb(223, 235, 240);
+        }
+
+        .footer p {
+            color: #666;
+            margin: 0;
+            padding-top: 5px;
+            padding-bottom: 5px;
+        }
+
+        .homepage {
+
+        }
+
+        .homepage h1 {
+            color: rgb(80, 150, 219);
+            font-size: 3rem;
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+
+        .homepage h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .homepage > img {
+            width: 300px;
+            margin-left: 80px;
+            vertical-align: middle;
+        }
+
+        @media (min-width: 1500px) {
+            .homepage h1 {
+                font-size: 3.5rem;
+            }
+
+            .homepage h2 {
+                font-size: 4rem;
+            }
+
+            .homepage h3 {
+                font-size: 2rem;
+            }
+
+            .homepage p {
+                font-size: 1.2rem;
+            }
+
+            .homepage > img {
+                width: 400px;
+            }
+        }
+
+        #show-contact-us-modal-button {
+            cursor: pointer;
+            border: none;
+            background: none;
+            color: rgb(83, 151, 216);
+        }
+
+        /* The Modal (background) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0, 0, 0); /* Fallback color */
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        /* Modal Content/Box */
+        .modal-content {
+            background-color: #fefefe;
+            margin: 200px auto;
+            padding: 20px;
+            width: 50%; /* Could be more or less, depending on screen size */
+            box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 8px, rgba(0, 0, 0, 0.2) 0px 1px 8px;
+            border-radius: 3px;
+        }
+
+    </style>
+</head>
+<body>
+
+<div id="fullpage">
+
+    <!--职云-->
+    <div class="section"
+         style="background-image: url('https://o9mnye2z2.qnssl.com//careercle/homepage/index/background.png'); background-size: cover;">
+        <div class="homepage">
+            <div style="display: inline-block; text-align: left; vertical-align: top">
+                <h1 style="">职云</h1>
+                <h2 style="">高校大数据精准就业服务平台</h2>
+                <h3 style="">互联网+精准就业 careercle.com</h3>
+                <p>您也需要一套更省心更便捷的新一代就业管理平台?
+                    <button id="show-contact-us-modal-button">
+                        <img src="https://o9mnye2z2.qnssl.com//careercle/homepage/index/phone.png"/>请联系我们
+                    </button>
+                </p>
+            </div>
+
+            <img src="https://o9mnye2z2.qnssl.com//careercle/homepage/index/image.png"/>
+
+            <div id="contact-us-modal" class="modal">
+                <div class="modal-content">
+                    <p>客服电话: 010-53656100</p>
+                    <p>客服邮箱: coo@51zhiquan.com</p>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <!--产品体系-->
+    <div class="section"
+         style="background-image: url('https://o9mnye2z2.qnssl.com//careercle/homepage/product_line/background.png'); background-size: cover;">
+        <div>
+            <div style="display: inline-block">
+                <img src="https://o9mnye2z2.qnssl.com//careercle/homepage/product_line/architecture.png"
+                     style="width: 300px;"/>
+                <span style="display: block;">
+                    <b style="font-size: 1.7rem;">"1+3"</b> <span style="font-size: 1.3rem;">产品体系</span>
+                </span>
+            </div>
+
+            <div class="product-architecture-container">
+                <div class="product-architecture-item animated">
+                    <p>
+                        <img src="https://o9mnye2z2.qnssl.com//careercle/homepage/product_line/cloud.png"/>
+                        职云就业服务系统
+                    </p>
+                </div>
+                <div class="product-architecture-item animated">
+                    <p>
+                        <img src="https://o9mnye2z2.qnssl.com//careercle/homepage/product_line/mobile.png"/>
+                        移动端App (iOS + Android)
+                    </p>
+                </div>
+                <div class="product-architecture-item animated">
+                    <p>
+                        <img src="https://o9mnye2z2.qnssl.com//careercle/homepage/product_line/wechat.png"/>
+                        微信平台
+                    </p>
+                </div>
+                <div class="product-architecture-item animated">
+                    <p>
+                        <img src="https://o9mnye2z2.qnssl.com//careercle/homepage/product_line/chrome.png"/>
+                        手机网页
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--就业生态-->
+    <div class="section">
+        <div>
+            <div class="section-header">搭建完整<b>就业生态</b></div>
+            <div>
+                <div class="ecosystem-item animated">
+                    <img src="https://o9mnye2z2.qnssl.com//careercle/homepage/ecosystem/student.png"/>
+                    <span>学生</span>
+                </div>
+                <div class="ecosystem-item animated">
+                    <img src="https://o9mnye2z2.qnssl.com//careercle/homepage/ecosystem/enterprise.png"/>
+                    <span>企业</span>
+                </div>
+                <div class="ecosystem-item animated">
+                    <img src="https://o9mnye2z2.qnssl.com//careercle/homepage/ecosystem/university.png"/>
+                    <span>高校</span>
+                </div>
+                <div class="ecosystem-item animated">
+                    <img src="https://o9mnye2z2.qnssl.com//careercle/homepage/ecosystem/schoolfellow.png"/>
+                    <span>校友</span>
+                </div>
+            </div>
+
+            <div class="ecosystem-title animated">四端互联</div>
+            <p class="ecosystem-description animated">完整的就业生态网络是由学生、企业、高校和校友四端组成</p>
+            <p class="ecosystem-description animated">在职云系统内形成大学生就业的完整闭环</p>
+            <p class="ecosystem-description animated">职云系统自动屏蔽不良数据,替您监管维护平台的运转</p>
+        </div>
+    </div>
+
+    <!--产品特色-->
+    <div class="section section-background">
+        <div style="margin-top: -60px;">
+            <div class="feature">
+                <div class="description animated">
+                    <div class="section-header">就业管理<b>化繁为简</b></div>
+                    <p>模块化就业管理</p>
+                    <p>一键发布职位</p>
+                    <p>就业数据自动生成</p>
+                </div>
+                <img style="" id="features-web" class="animated"
+                     src="https://o9mnye2z2.qnssl.com//careercle/homepage/features/web.png"/>
+            </div>
+            <div class="feature" style="margin-top: 80px;">
+                <img id="features-app" class="animated"
+                     src="https://o9mnye2z2.qnssl.com//careercle/homepage/features/app.png"/>
+                <div class="description animated" style="margin-left: 380px;">
+                    <div class="section-header"><b>实时把握</b>就业动态</div>
+                    <p>随时查看求职进程与签约信息</p>
+                    <p>为就业指导工作提供依据</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--功能模块-->
+    <div class="section">
+        <div class="section-header">职云五大功能模块</div>
+        <div class="functions">
+            <div class="function-item animated">
+                <img src="https://o9mnye2z2.qnssl.com//careercle/homepage/functions/position.png"/>
+                <div class="title">职位精准推荐</div>
+                <p>集成职圈海量职位资源、独家职位匹配引擎，自动屏蔽不良职位，主动监管平台运营。</p>
+            </div>
+            <div class="function-item animated">
+                <img src="https://o9mnye2z2.qnssl.com//careercle/homepage/functions/statistics.png"/>
+                <div class="title">就业统计报告</div>
+                <p>实时、智能，解放你的双手，职云随时为你呈现就业动态，实现实时监控。</p>
+            </div>
+            <div class="function-item animated">
+                <img src="https://o9mnye2z2.qnssl.com//careercle/homepage/functions/campus_recruitment.png"/>
+                <div class="title">校招活动管理</div>
+                <p>便捷地发布校园招聘活动，实时精准推荐到学生终端。</p>
+            </div>
+        </div>
+        <div class="functions">
+            <div class="function-item animated">
+                <img src="https://o9mnye2z2.qnssl.com//careercle/homepage/functions/schoolfellow.png"/>
+                <div class="title">校友信息管理</div>
+                <p>全方位统计高校校友职业发展状况，利用校友资源为高校就业创业带来更丰富的机会。</p>
+            </div>
+            <div class="function-item animated">
+                <img src="https://o9mnye2z2.qnssl.com//careercle/homepage/functions/student.png"/>
+                <div class="title">学生信息管理</div>
+                <p>海量学生信息的智慧筛选、搜索、浏览、修改、导出，操作方便、简单、高性能。</p>
+            </div>
+        </div>
+    </div>
+
+    <!--领军团队-->
+    <div class="section section-background">
+        <div class="section-header">领军团队</div>
+
+        <div class="profile profile-left-align animated">
+            <img class="avatar"
+                 src="https://o9mnye2z2.qnssl.com//careercle/homepage/profile/avatar/lvyun.png"/>
+            <div class="info">
+                <div class="name">吕云 博士</div>
+                <p class="description">美国弗罗里达州立大学博士并博士后，北航铭品大数据创新实验室执行主任，首席科学家FIU高性能数据数据库研究中心专家，10年大数据研究应用经验。</p>
+            </div>
+        </div>
+
+        <div class="profile profile-right-align animated">
+            <div class="info">
+                <div class="name">孙伟 教授</div>
+                <p class="description">北京航空航天大学软件学院创始院长，贵州盛华职业学院校长，贵州双龙航软投资基金主席，美国弗罗里达州立大学终身教授，北京软件行业协会执行会长。</p>
+            </div>
+            <img class="avatar"
+                 src="https://o9mnye2z2.qnssl.com//careercle/homepage/profile/avatar/sunwei.png"/>
+        </div>
+
+        <div class="profile profile-left-align animated">
+            <img class="avatar"
+                 src="https://o9mnye2z2.qnssl.com//careercle/homepage/profile/avatar/litao.png"/>
+            <div class="info">
+                <div class="name">李涛 教授</div>
+                <p class="description">美国弗罗里达州立大学正教授，FIU计算与信息学院数据挖掘实验室主任，博士生导师，美国杰出青年教授，2010IBM大规模数据分析创新奖。</p>
+            </div>
+        </div>
+
+        <div class="profile profile-right-align animated">
+            <div class="info">
+                <div class="name">周涛 教授</div>
+                <p class="description">中国大数据领域领军人物，电子科技大学大数据研究中心主任，博士生导师，现任大数据生产中心首席科学家。</p>
+            </div>
+            <img class="avatar"
+                 src="https://o9mnye2z2.qnssl.com//careercle/homepage/profile/avatar/zhoutao.png"/>
+        </div>
+    </div>
+
+    <!--入驻企业-->
+    <div class="section">
+        <div class="section-header">入驻企业</div>
+
+        <div class="partner-gallery animated">
+            <img class="partner"
+                 src="https://o9mnye2z2.qnssl.com//careercle/homepage/partners/logo/logo1.png"/>
+            <img class="partner"
+                 src="https://o9mnye2z2.qnssl.com//careercle/homepage/partners/logo/logo2.png"/>
+            <img class="partner"
+                 src="https://o9mnye2z2.qnssl.com//careercle/homepage/partners/logo/logo3.png"/>
+            <img class="partner"
+                 src="https://o9mnye2z2.qnssl.com//careercle/homepage/partners/logo/logo4.png"/>
+            <img class="partner"
+                 src="https://o9mnye2z2.qnssl.com//careercle/homepage/partners/logo/logo5.png"/>
+            <img class="partner"
+                 src="https://o9mnye2z2.qnssl.com//careercle/homepage/partners/logo/logo6.png"/>
+            <img class="partner"
+                 src="https://o9mnye2z2.qnssl.com//careercle/homepage/partners/logo/logo7.png"/>
+            <img class="partner"
+                 src="https://o9mnye2z2.qnssl.com//careercle/homepage/partners/logo/logo8.png"/>
+            <img class="partner"
+                 src="https://o9mnye2z2.qnssl.com//careercle/homepage/partners/logo/logo9.png"/>
+            <img class="partner"
+                 src="https://o9mnye2z2.qnssl.com//careercle/homepage/partners/logo/logo10.png"/>
+            <img class="partner"
+                 src="https://o9mnye2z2.qnssl.com//careercle/homepage/partners/logo/logo11.png"/>
+            <img class="partner"
+                 src="https://o9mnye2z2.qnssl.com//careercle/homepage/partners/logo/logo12.png"/>
+            <img class="partner"
+                 src="https://o9mnye2z2.qnssl.com//careercle/homepage/partners/logo/logo13.png"/>
+            <img class="partner"
+                 src="https://o9mnye2z2.qnssl.com//careercle/homepage/partners/logo/logo14.png"/>
+            <img class="partner"
+                 src="https://o9mnye2z2.qnssl.com//careercle/homepage/partners/logo/logo15.png"/>
+            <img class="partner"
+                 src="https://o9mnye2z2.qnssl.com//careercle/homepage/partners/logo/logo16.png"/>
+            <img class="partner"
+                 src="https://o9mnye2z2.qnssl.com//careercle/homepage/partners/logo/logo17.png"/>
+            <img class="partner"
+                 src="https://o9mnye2z2.qnssl.com//careercle/homepage/partners/logo/logo18.png"/>
+
+        </div>
+
+        <div class="footer">
+            <p>客服电话: 010-53656100 客服邮箱: coo@51zhiquan.com</p>
+            <p>Copyright © 2016 职圈科技 All Rights Reserved. 京ICP备16006523号</p>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
