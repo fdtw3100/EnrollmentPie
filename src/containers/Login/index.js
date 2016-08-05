@@ -16,7 +16,7 @@ class Login extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            userType: UserType.university
+            userType: UserType.user
         };
 
         this.onUserTypeChange = this.onUserTypeChange.bind(this);
@@ -77,9 +77,8 @@ class Login extends React.Component {
         const loginFormTab = <Tabs className="login-form-tabs"
                                    activeKey={userType.value}
                                    onChange={this.onUserTypeChange}>
-            <TabPane tab={UserType.student.text} key={UserType.student.value}>{loginForm}</TabPane>
-            <TabPane tab={UserType.university.text} key={UserType.university.value}>{loginForm}</TabPane>
-            <TabPane tab={UserType.company.text} key={UserType.company.value}>{loginForm}</TabPane>
+            <TabPane tab={UserType.user.text} key={UserType.user.value}>{loginForm}</TabPane>
+            <TabPane tab={UserType.admin.text} key={UserType.admin.value}>{loginForm}</TabPane>
         </Tabs>;
 
         return <div className="login-container">

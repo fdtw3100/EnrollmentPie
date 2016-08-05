@@ -1,5 +1,5 @@
 /**
- * Created by ZhuGongpu on 16/4/22.
+ * Created by LinTongwei on 16/8/5.
  */
 
 import React from "react";
@@ -14,86 +14,74 @@ export default class SideBar extends React.Component {
 
     componentWillMount() {
         this.defaultOpenKeys = [
-            TreeRoutes.university.position_recommendation_manager.index,
-            TreeRoutes.university.student_info_manager.index,
-            TreeRoutes.university.campus_recruitment_manager.index,
-            TreeRoutes.university.employment_quality_report.index,
-            TreeRoutes.university.schoolfellow_manager.index
+            TreeRoutes.user.enrollment_plan.index,
+            TreeRoutes.user.advertorial_manager.index,
+            TreeRoutes.user.advertorial_review.index,
+            TreeRoutes.user.advertorial_propagation.index,
+            TreeRoutes.user.network_negative_monitor.index
         ].filter((key) => new RegExp(key).test(this.props.location.pathname));
 }
 
     render() {
         const {
-            employment_quality_report,
-            position_recommendation_manager,
-            student_info_manager,
-            campus_recruitment_manager,
-            schoolfellow_manager
-        } = PlainRoutes.university;
+            enrollment_plan,
+            advertorial_manager,
+            advertorial_review,
+            advertorial_propagation,
+            network_negative_monitor
+        } = PlainRoutes.user;
 
         return <aside className="side-bar-container clearfix">
             <Menu
                 defaultOpenKeys={this.defaultOpenKeys}
                 selectedKeys={[this.props.location.pathname]}
                 mode="inline">
-                <SubMenu key={TreeRoutes.university.position_recommendation_manager.index}
-                         title={<span><Icon type="user" /><span>职位推荐管理</span></span>}>
-                    <Menu.Item key={position_recommendation_manager.effect_feedback}>
-                        <Link to={position_recommendation_manager.effect_feedback}>效果反馈</Link>
+                <SubMenu key={TreeRoutes.user.enrollment_plan.index}
+                         title={<span><Icon type="user" /><span>招生计划</span></span>}>
+                    <Menu.Item key={enrollment_plan.competitor_analysis}>
+                        <Link to={enrollment_plan.competitor_analysis}>竞品分析</Link>
                     </Menu.Item>
-                    <Menu.Item key={position_recommendation_manager.company_manager}>
-                        <Link to={position_recommendation_manager.company_manager}>企业审核</Link>
-                    </Menu.Item>
-                    <Menu.Item key={position_recommendation_manager.position_manager}>
-                        <Link to={position_recommendation_manager.position_manager}>职位审核</Link>
+                    <Menu.Item key={enrollment_plan.strategy_design}>
+                        <Link to={enrollment_plan.strategy_design}>策略制定</Link>
                     </Menu.Item>
                 </SubMenu>
-                <SubMenu key={TreeRoutes.university.student_info_manager.index}
-                         title={<span><Icon type="setting" /><span>学生信息管理</span></span>}>
-                    <Menu.Item key={student_info_manager.student_list}>
-                        <Link to={student_info_manager.student_list}>信息筛查</Link>
+                <SubMenu key={TreeRoutes.user.advertorial_manager.index}
+                         title={<span><Icon type="setting" /><span>软文管理</span></span>}>
+                    <Menu.Item key={advertorial_manager.advertorial_list}>
+                        <Link to={advertorial_manager.advertorial_list}>软文列表</Link>
                     </Menu.Item>
-                    <Menu.Item key={student_info_manager.collect_info}>
-                        <Link to={student_info_manager.collect_info}>信息采集</Link>
+                    <Menu.Item key={advertorial_manager.new_advertorial}>
+                        <Link to={advertorial_manager.new_advertorial}>新建软文</Link>
                     </Menu.Item>
-                </SubMenu>
-                <SubMenu key={TreeRoutes.university.campus_recruitment_manager.index}
-                         title={<span><Icon type="calendar" /><span>校招活动管理</span></span>}>
-                    <Menu.Item key={campus_recruitment_manager.view_fairs}>
-                        <Link to={campus_recruitment_manager.view_fairs}>查看活动</Link>
+                    <Menu.Item key={advertorial_manager.advertorial_statics_analysis}>
+                        <Link to={advertorial_manager.advertorial_statics_analysis}>软文数据统计</Link>
                     </Menu.Item>
                 </SubMenu>
-                <SubMenu key={TreeRoutes.university.employment_quality_report.index}
-                         title={<span><Icon type="line-chart" /><span>就业质量报告</span></span>}>
-                    <Menu.Item key={employment_quality_report.overall}>
-                        <Link to={employment_quality_report.overall}>基本情况</Link>
-                    </Menu.Item>
-                    <Menu.Item key={employment_quality_report.quality_evaluation}>
-                        <Link to={employment_quality_report.quality_evaluation}>质量评估</Link>
-                    </Menu.Item>
-                    <Menu.Item key={employment_quality_report.trend}>
-                        <Link to={employment_quality_report.trend}>历年变化</Link>
-                    </Menu.Item>
-                    <Menu.Item key={employment_quality_report.student_evaluation}>
-                        <Link to={employment_quality_report.student_evaluation}>学生调研</Link>
-                    </Menu.Item>
-                    <Menu.Item key={employment_quality_report.company_feedback}>
-                        <Link to={employment_quality_report.company_feedback}>单位反馈</Link>
-                    </Menu.Item>
-                    <Menu.Item key={employment_quality_report.export_report}>
-                        <Link to={employment_quality_report.export_report}>导出报告</Link>
+                <SubMenu key={TreeRoutes.user.advertorial_review.index}
+                         title={<span><Icon type="calendar" /><span>软文审核</span></span>}>
+                    <Menu.Item key={advertorial_review.advertorial_review_list}>
+                        <Link to={advertorial_review.advertorial_review_list}>软文审核列表</Link>
                     </Menu.Item>
                 </SubMenu>
-                <SubMenu key={TreeRoutes.university.schoolfellow_manager.index}
-                         title={<span><Icon type="share-alt" /><span>校友信息管理</span></span>}>
-                    <Menu.Item key={schoolfellow_manager.statistics}>
-                        <Link to={schoolfellow_manager.statistics}>校友统计</Link>
+                <SubMenu key={TreeRoutes.user.advertorial_propagation.index}
+                         title={<span><Icon type="line-chart" /><span>软文传播</span></span>}>
+                    <Menu.Item key={advertorial_propagation.advertorial_propagation_list}>
+                        <Link to={advertorial_propagation.advertorial_propagation_list}>软文传播列表</Link>
                     </Menu.Item>
-                    <Menu.Item key={schoolfellow_manager.contact}>
-                        <Link to={schoolfellow_manager.contact}>校友名录</Link>
+                    <Menu.Item key={advertorial_propagation.advertorial_propagation_statics_analysis}>
+                        <Link to={advertorial_propagation.advertorial_propagation_statics_analysis}>软文数据统计</Link>
                     </Menu.Item>
-                    <Menu.Item key={schoolfellow_manager.survey}>
-                        <Link to={schoolfellow_manager.survey}>校友问卷</Link>
+                </SubMenu>
+                <SubMenu key={TreeRoutes.user.network_negative_monitor.index}
+                         title={<span><Icon type="share-alt" /><span>网络负面监测</span></span>}>
+                    <Menu.Item key={network_negative_monitor.input_negative}>
+                        <Link to={network_negative_monitor.input_negative}>录入负面信息</Link>
+                    </Menu.Item>
+                    <Menu.Item key={network_negative_monitor.resolve_negative}>
+                        <Link to={network_negative_monitor.resolve_negative}>处理负面信息</Link>
+                    </Menu.Item>
+                    <Menu.Item key={network_negative_monitor.negative_statics_analysis}>
+                        <Link to={network_negative_monitor.negative_statics_analysis}>监测网络负面数据</Link>
                     </Menu.Item>
                 </SubMenu>
             </Menu>

@@ -1,126 +1,107 @@
 /**
  * 定义全局路由
- * Created by ZhuGongpu on 16/5/20.
+ * Created by LinTongwei on 16/8/5.
  */
 export const TreeRoutes = {
     index: "/",
     login: "/login",
-    university: {
-        index: "university",
-        //职位推荐管理
-        position_recommendation_manager: {
-            index: "position_recommendation",
-            //效果反馈
-            effect_feedback: "effect_feedback",
-            //企业审核
-            company_manager: "company_manager",
-            //职位审核
-            position_manager: "position_manager"
+    user: {
+        index: "user",
+        //招生计划
+        enrollment_plan: {
+            index: "enrollment_plan",
+            //竞品分析
+            competitor_analysis: "competitor_analysis",
+            //策略制定
+            strategy_design: "strategy_design"
         },
-        //学生信息管理
-        student_info_manager: {
-            index: "student_info",
-            //信息筛查
-            student_list: "student_list",
-            //信息采集
-            collect_info: "collect_info"
+        //软文管理
+        advertorial_manager: {
+            index: "advertorial_manager",
+            //软文列表
+            advertorial_list: "advertorial_list",
+            //新建软文
+            new_advertorial: "new_advertorial",
+            //软文数据统计
+            advertorial_statics_analysis: "advertorial_statics_analysis"
         },
-        //校招活动管理
-        campus_recruitment_manager: {
-            index: "campus_recruitment",
-            //查看活动
-            view_fairs: "view_fairs"
+        //软文审核
+        advertorial_review: {
+            index: "advertorial_review",
+            //软文审核列表
+            advertorial_review_list: "advertorial_review_list"
         },
-        //就业质量报告
-        employment_quality_report: {
-            index: "employment_quality_report",
-            //基本情况
-            overall: "overall",
-            //质量评估
-            quality_evaluation: "quality_evaluation",
-            //历史变化
-            trend: "trend",
-            //学生调研
-            student_evaluation: "student_evaluation",
-            //单位反馈
-            company_feedback: "company_feedback",
-            //导出报告
-            export_report: "export_report"
+        //软文传播
+        advertorial_propagation: {
+            index: "advertorial_propagation",
+            //软文传播列表
+            advertorial_propagation_list: "advertorial_propagation_list",
+            //软文数据统计
+            advertorial_propagation_statics_analysis: "advertorial_propagation_statics_analysis"
         },
-        //校友信息管理
-        schoolfellow_manager: {
-            index: "schoolfellow",
-            //校友统计
-            statistics: "statistics",
-            //校友名录
-            contact: "contact",
-            //校友问卷
-            survey: "survey"
+        //网络负面监测
+        network_negative_monitor: {
+            index: "network_negative_monitor",
+            //录入负面信息
+            input_negative: "input_negative",
+            //处理负面信息
+            resolve_negative: "resolve_negative",
+            //监测网络负面数据
+            negative_statics_analysis: "negative_statics_analysis"
         }
     },
-    student: {
-        index: "student",
-        collect_info: "collect_info"
+    admin: {
+        index: "admin"
     }
 };
 
-//TODO:
 export const PlainRoutes = {
     index: TreeRoutes.index,
     login: TreeRoutes.login,
-    //region university
-    university: {
-        index: `${TreeRoutes.index}${TreeRoutes.university.index}`,
-        //职位推荐管理
-        position_recommendation_manager: {
-            //效果反馈
-            effect_feedback: `${TreeRoutes.index}${TreeRoutes.university.index}/${TreeRoutes.university.position_recommendation_manager.index}/${TreeRoutes.university.position_recommendation_manager.effect_feedback}`,
-            //企业审核
-            company_manager: `${TreeRoutes.index}${TreeRoutes.university.index}/${TreeRoutes.university.position_recommendation_manager.index}/${TreeRoutes.university.position_recommendation_manager.company_manager}`,
-            //职位审核
-            position_manager: `${TreeRoutes.index}${TreeRoutes.university.index}/${TreeRoutes.university.position_recommendation_manager.index}/${TreeRoutes.university.position_recommendation_manager.position_manager}`
+    //region user
+    user: {
+        index: `${TreeRoutes.index}${TreeRoutes.user.index}`,
+        //招生计划
+        enrollment_plan: {
+            //竞品分析
+            competitor_analysis: `${TreeRoutes.index}${TreeRoutes.user.index}/${TreeRoutes.user.enrollment_plan.index}/${TreeRoutes.user.enrollment_plan.competitor_analysis}`,
+            //策略制定
+            strategy_design: `${TreeRoutes.index}${TreeRoutes.user.index}/${TreeRoutes.user.enrollment_plan.index}/${TreeRoutes.user.enrollment_plan.strategy_design}`
         },
-        //学生信息管理
-        student_info_manager: {
-            //信息筛查
-            student_list: `${TreeRoutes.index}${TreeRoutes.university.index}/${TreeRoutes.university.student_info_manager.index}/${TreeRoutes.university.student_info_manager.student_list}`,
-            //信息采集
-            collect_info: `${TreeRoutes.index}${TreeRoutes.university.index}/${TreeRoutes.university.student_info_manager.index}/${TreeRoutes.university.student_info_manager.collect_info}`
+        //软文管理
+        advertorial_manager: {
+            //软文列表
+            advertorial_list: `${TreeRoutes.index}${TreeRoutes.user.index}/${TreeRoutes.user.advertorial_manager.index}/${TreeRoutes.user.advertorial_manager.advertorial_list}`,
+            //新建软文
+            new_advertorial: `${TreeRoutes.index}${TreeRoutes.user.index}/${TreeRoutes.user.advertorial_manager.index}/${TreeRoutes.user.advertorial_manager.new_advertorial}`,
+            //软文数据统计
+            advertorial_statics_analysis: `${TreeRoutes.index}${TreeRoutes.user.index}/${TreeRoutes.user.advertorial_manager.index}/${TreeRoutes.user.advertorial_manager.advertorial_statics_analysis}`
         },
-        //校招活动管理
-        campus_recruitment_manager: {
-            //查看活动
-            view_fairs: `${TreeRoutes.index}${TreeRoutes.university.index}/${TreeRoutes.university.campus_recruitment_manager.index}/${TreeRoutes.university.campus_recruitment_manager.view_fairs}`
+        //软文审核
+        advertorial_review: {
+            //软文审核列表
+            advertorial_review_list: `${TreeRoutes.index}${TreeRoutes.user.index}/${TreeRoutes.user.advertorial_review.index}/${TreeRoutes.user.advertorial_review.advertorial_review_list}`
         },
-        //就业质量报告
-        employment_quality_report: {
-            //基本情况
-            overall: `${TreeRoutes.index}${TreeRoutes.university.index}/${TreeRoutes.university.employment_quality_report.index}/${TreeRoutes.university.employment_quality_report.overall}`,
-            //质量评估
-            quality_evaluation: `${TreeRoutes.index}${TreeRoutes.university.index}/${TreeRoutes.university.employment_quality_report.index}/${TreeRoutes.university.employment_quality_report.quality_evaluation}`,
-            //历史变化
-            trend: `${TreeRoutes.index}${TreeRoutes.university.index}/${TreeRoutes.university.employment_quality_report.index}/${TreeRoutes.university.employment_quality_report.trend}`,
-            //学生调研
-            student_evaluation: `${TreeRoutes.index}${TreeRoutes.university.index}/${TreeRoutes.university.employment_quality_report.index}/${TreeRoutes.university.employment_quality_report.student_evaluation}`,
-            //单位反馈
-            company_feedback: `${TreeRoutes.index}${TreeRoutes.university.index}/${TreeRoutes.university.employment_quality_report.index}/${TreeRoutes.university.employment_quality_report.company_feedback}`,
-            //导出报告
-            export_report: `${TreeRoutes.index}${TreeRoutes.university.index}/${TreeRoutes.university.employment_quality_report.index}/${TreeRoutes.university.employment_quality_report.export_report}`
+        //软文传播
+        advertorial_propagation: {
+            //软文传播列表
+            advertorial_propagation_list: `${TreeRoutes.index}${TreeRoutes.user.index}/${TreeRoutes.user.advertorial_propagation.index}/${TreeRoutes.user.advertorial_propagation.advertorial_propagation_list}`,
+            //软文数据统计
+            advertorial_propagation_statics_analysis: `${TreeRoutes.index}${TreeRoutes.user.index}/${TreeRoutes.user.advertorial_propagation.index}/${TreeRoutes.user.advertorial_propagation.advertorial_propagation_statics_analysis}`
         },
-        //校友信息管理
-        schoolfellow_manager: {
-            //校友统计
-            statistics: `${TreeRoutes.index}${TreeRoutes.university.index}/${TreeRoutes.university.schoolfellow_manager.index}/${TreeRoutes.university.schoolfellow_manager.statistics}`,
-            //校友名录
-            contact: `${TreeRoutes.index}${TreeRoutes.university.index}/${TreeRoutes.university.schoolfellow_manager.index}/${TreeRoutes.university.schoolfellow_manager.contact}`,
-            //校友问卷
-            survey: `${TreeRoutes.index}${TreeRoutes.university.index}/${TreeRoutes.university.schoolfellow_manager.index}/${TreeRoutes.university.schoolfellow_manager.survey}`
+        //网络负面监测
+        network_negative_monitor: {
+            //录入负面信息
+            input_negative: `${TreeRoutes.index}${TreeRoutes.user.index}/${TreeRoutes.user.network_negative_monitor.index}/${TreeRoutes.user.network_negative_monitor.input_negative}`,
+            //处理负面信息
+            resolve_negative: `${TreeRoutes.index}${TreeRoutes.user.index}/${TreeRoutes.user.network_negative_monitor.index}/${TreeRoutes.user.network_negative_monitor.resolve_negative}`,
+            //监测网络负面数据
+            negative_statics_analysis: `${TreeRoutes.index}${TreeRoutes.user.index}/${TreeRoutes.user.network_negative_monitor.index}/${TreeRoutes.user.network_negative_monitor.negative_statics_analysis}`
         }
     },
     //endregion
-    student: {
-        index: `${TreeRoutes.index}${TreeRoutes.student.index}`,
-        collect_info: `${TreeRoutes.index}${TreeRoutes.student.index}/${TreeRoutes.student.collect_info}`
+    admin: {
+        index: `${TreeRoutes.index}${TreeRoutes.admin.index}`
     }
 };
 

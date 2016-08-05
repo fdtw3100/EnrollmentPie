@@ -1,18 +1,15 @@
 /**
  * 用户类型
- * Created by 职圈 on 2016/5/11.
- * Updated by 朱公朴 on 2016/5/23.
+ * Created by LinTongwei on 2016/8/5.
  */
 import {PlainRoutes} from "../router/routes";
 
 export const UserType = {
-    student: {text: "学生", value: '1', index: PlainRoutes.student.index},
-    university: {text: "学校", value: '2', index: PlainRoutes.university.index},
-    company: {text: "企业", value: '3', index: "http://c.51zhiquan.com"},
+    user: {text: "普通用户", value: '1', index: PlainRoutes.user.index},
+    admin: {text: "管理员", value: '2', index: PlainRoutes.admin.index}
 };
 
 export default {
-    '1': UserType.student,
-    '2': UserType.university,
-    '3': UserType.company
+    '1': UserType.user,
+    '2': UserType.admin
 };

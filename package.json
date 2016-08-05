@@ -1,7 +1,7 @@
 {
-  "name": "university-empleyment-platform-for-university",
+  "name": "enrollment-pie",
   "version": "1.0.0",
-  "description": "高校毕业生精准就业平台-高校版",
+  "description": "招生派",
   "main": "index.js",
   "scripts": {
     "build:webpack": "cross-env NODE_ENV=production webpack --config webpack.config.prod.js",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://ZhuGongpu@github.com/ZhuGongpu/UniversityEmploymentPlatform-for-University.git"
+    "url": "git+https://fdtw3100@github.com/fdtw3100/EnrollmentPie.git"
   },
-  "author": "ZHU Gongpu",
+  "author": "LIN Tongwei",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ZhuGongpu/UniversityEmploymentPlatform-for-University/issues"
+    "url": "https://github.com/fdtw3100/EnrollmentPie/issues"
   },
-  "homepage": "https://github.com/ZhuGongpu/UniversityEmploymentPlatform-for-University#readme",
+  "homepage": "https://github.com/fdtw3100/EnrollmentPie#readme",
   "devDependencies": {
     "antd": "^1.1.0",
     "autoprefixer-loader": "^3.2.0",
